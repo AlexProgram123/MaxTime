@@ -36,7 +36,7 @@ public class Main {
         b1.setTimeOfWork(-1);
         b11.setTimeOfWork(-1);
         b111.setTimeOfWork(3);
-        b112.setTimeOfWork(2);
+        b112.setTimeOfWork(5);
         b12.setTimeOfWork(4);
         b13.setTimeOfWork(-1);
         b131.setTimeOfWork(-1);
@@ -56,13 +56,13 @@ public class Main {
         buses[9] = b132;
         buses[10] = busbarForChange;
 
-
-
         b1.setTimeOfWork(findTime(b1, buses));
-        System.out.println("1 " + b1.getTimeOfWork());
-        System.out.println("11 " + b11.getTimeOfWork());
-        System.out.println("111  " + b111.getTimeOfWork());
-        System.out.println("13  " + b13.getTimeOfWork());
+
+        System.out.println("t(выкл1)= " + b1.getTimeOfWork());
+        System.out.println("t(выкл11)= " + b11.getTimeOfWork());
+        System.out.println("t(выкл12)= " + b12.getTimeOfWork());
+        System.out.println("t(выкл13)= " + b13.getTimeOfWork());
+        System.out.println("t(выкл131)= " + b131.getTimeOfWork());
     }
 
 
@@ -73,12 +73,11 @@ public class Main {
         double tMax=0;
 
         for (int i = 0; i <= 10; i++) {
-            if ((busess[i].getPosition() / (((b.getPosition()) * 10))) == 1) {
+            if (((busess[i].getPosition()/10) == (b.getPosition()))) {
                 busesnoww.add(busess[i]);
             }
         }
 
-        
         for (int i=0; i<busesnoww.size(); i++) {
             busbarForChange=busesnoww.get(i);
             if (busbarForChange.getTimeOfWork() == -1) {
@@ -87,14 +86,10 @@ public class Main {
             }
         }
 
-
         for (int i=0; i<busesnoww.size(); i++){
           if (busesnoww.get(i).getTimeOfWork()>tMax) {
                 tMax = busesnoww.get(i).getTimeOfWork() + 0.5;
             }
-        }
-        for (int i=0; i<busesnoww.size(); i++) {
-            System.out.println(busesnoww.get(i).getPosition());
         }
         return tMax;
     }
