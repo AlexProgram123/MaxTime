@@ -20,4 +20,11 @@ public class Busbar {
     public double getTimeOfWork() {
         return timeOfWork;
     }
+
+    public void ShowTimeOfWork() {
+        System.out.println("Выключатель №:" + getPosition() + "  Время срабатывания: " + getTimeOfWork() + " секунд");
+    }
+
+
 }
+

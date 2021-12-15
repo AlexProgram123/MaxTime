@@ -58,11 +58,12 @@ public class Main {
 
         b1.setTimeOfWork(findTime(b1, buses));
 
-        System.out.println("t(выкл1)= " + b1.getTimeOfWork());
-        System.out.println("t(выкл11)= " + b11.getTimeOfWork());
-        System.out.println("t(выкл12)= " + b12.getTimeOfWork());
-        System.out.println("t(выкл13)= " + b13.getTimeOfWork());
-        System.out.println("t(выкл131)= " + b131.getTimeOfWork());
+
+        b1.ShowTimeOfWork();
+        b11.ShowTimeOfWork();
+        b12.ShowTimeOfWork();
+        b13.ShowTimeOfWork();
+        b131.ShowTimeOfWork();
     }
 
 
@@ -72,7 +73,7 @@ public class Main {
         Busbar busbarForChange = busess[10];
         double tMax=0;
 
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i < 10; i++) {
             if (((busess[i].getPosition()/10) == (b.getPosition()))) {
                 busesnoww.add(busess[i]);
             }
